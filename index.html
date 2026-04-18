@@ -194,13 +194,86 @@
         gap: 32px;
       }
 
-      .about-image img {
-        border-radius: 12px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+      .about-text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
       }
 
       .about-text p {
-        margin-bottom: 16px;
+        color: var(--color-text-muted);
+        line-height: 1.8;
+      }
+
+      .about-strengths {
+        list-style: none;
+        margin: 8px 0 16px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .about-strengths li {
+        position: relative;
+        padding-left: 24px;
+        color: var(--color-text-muted);
+      }
+
+      .about-strengths li::before {
+        content: "▹";
+        color: var(--color-primary);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+      }
+
+      .about-strengths strong {
+        color: var(--color-text-main);
+      }
+
+      .about-actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--color-primary);
+        color: var(--color-bg);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--color-primary-hover);
+        color: var(--color-bg);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        color: var(--color-primary);
+        border: 2px solid var(--color-primary);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--color-primary);
+        color: var(--color-bg);
+      }
+
+      .about-image img {
+        border-radius: 12px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        object-fit: cover;
       }
       /* CSS:ABOUT-END */
 
@@ -270,11 +343,12 @@
           align-items: center;
         }
 
-        .about-image {
+        .about-text {
           flex: 1;
+          padding-right: 24px;
         }
 
-        .about-text {
+        .about-image {
           flex: 1;
         }
 
@@ -335,24 +409,39 @@
           <div class="container">
             <h2 id="about-heading" class="section-title">關於我</h2>
             <div class="about-content">
-              <div class="about-image">
-                <img
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
-                  alt="在筆電前撰寫程式碼的前端開發者"
-                  loading="lazy"
-                />
-              </div>
               <div class="about-text">
                 <p>
-                  這裡目前是 About
-                  區的占位內容。未來會詳細介紹我的學習歷程、個人背景以及對於前端開發的理念。
+                  你好！我目前專注於前端開發與技術專案管理，擅長將靜態的網頁結構轉化為具備高互動性的
+                  React 現代網頁應用程式，同時兼顧乾淨的程式碼架構與使用者體驗。
                 </p>
                 <p>
-                  <strong>開發者提示：</strong>之後會用 Section SDD 的 Prompt
-                  產生新的 section，請把新的 section
-                  程式碼整段貼在這兩個註解（SECTION:ABOUT-START /
-                  END）中間，完全取代現在這一區。
+                  在工作風格上，我極度重視團隊協作與跨部門溝通。我相信好的產品不僅仰賴技術，更需要把複雜的事情講清楚，讓團隊能在同一個步調上推進。我也樂於在專案中擔任橋樑，確保每個細節都被妥善執行並減少不必要的無效勞動。
                 </p>
+                <ul class="about-strengths">
+                  <li>
+                    <strong>前端技術實作：</strong> 熟悉 React
+                    生態系，熱愛撰寫清晰、模組化且易於維護的程式碼。
+                  </li>
+                  <li>
+                    <strong>專案溝通與管理：</strong>
+                    具備協調能力，能精準對焦需求並推動專案順利前進。
+                  </li>
+                  <li>
+                    <strong>重視細節與效率：</strong>
+                    習慣梳理問題核心，專注於解決痛點並優化整體開發流程。
+                  </li>
+                </ul>
+                <div class="about-actions">
+                  <a href="#projects" class="btn btn-primary">查看作品集</a>
+                  <a href="#contact" class="btn btn-outline">聯絡我</a>
+                </div>
+              </div>
+              <div class="about-image">
+                <img
+                  src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80"
+                  alt="正在專心撰寫程式碼的工程師與螢幕畫面"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
